@@ -1,7 +1,22 @@
+import unicodedata
+
 from tau2.data_model.message import AssistantMessage, Message, Tick
 from tau2.data_model.simulation import CommunicateCheck, RewardInfo
 from tau2.data_model.tasks import RewardType, Task
 from tau2.evaluator.evaluator_base import EvaluatorBase
+
+
+def normalize_digits(text: str) -> str:
+    """Map every Unicode decimal digit to its ASCII digit (१६२८, ১৬২৮, ۱۶۲۸ -> 1628).
+
+    An agent answering a Hindi or Bengali customer may write numbers in that
+    script; the expected values are ASCII.  ASCII-only text is unchanged, so
+    English results are unaffected.
+    """
+    return "".join(
+        str(unicodedata.digit(ch)) if not ch.isascii() and unicodedata.category(ch) == "Nd" else ch
+        for ch in text
+    )
 
 
 class CommunicateEvaluator(EvaluatorBase[Message]):
