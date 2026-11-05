@@ -81,8 +81,8 @@ class CommunicateEvaluator(EvaluatorBase[Message]):
                     continue
                 if not message.has_text_content():
                     continue
-                if info_str.lower() in message.content.lower().replace(
-                    ",", ""
+                if normalize_digits(info_str.lower()) in normalize_digits(
+                    message.content.lower().replace(",", "")
                 ):  # TODO: This could be improved!
                     found = True
                     break
