@@ -224,3 +224,6 @@ data/simulations/.credentials/
 
 # Cursor IDE
 .cursor/
+
+# Per-language data directories (e.g. data_hi/ from the Indic tau2-bench release), if placed here.
+data_??/
