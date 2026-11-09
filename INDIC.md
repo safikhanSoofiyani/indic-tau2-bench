@@ -28,3 +28,9 @@ TAU2_DATA_DIR=$PWD/indic-tau2/data_hi tau2 run --domain airline \
 
 Only the simulated customer's brief and the user-simulator guidelines differ between
 languages. Policies, tools, databases and grading are the English ones.
+
+## Recommended setup
+
+- Core set: `airline`, `retail`, `telecom` (default `base` split) and `banking_knowledge`
+  with `--retrieval-config bm25` (no embedding API key needed; the knowledge base stays
+  English). `mock` is a toy domain and is not part of the headline numbers.
