@@ -29,8 +29,15 @@ TAU2_DATA_DIR=$PWD/indic-tau2/data_hi tau2 run --domain airline \
 Only the simulated customer's brief and the user-simulator guidelines differ between
 languages. Policies, tools, databases and grading are the English ones.
 
-## Recommended setup
+## Recommended setup and known limits
 
 - Core set: `airline`, `retail`, `telecom` (default `base` split) and `banking_knowledge`
   with `--retrieval-config bm25` (no embedding API key needed; the knowledge base stays
   English). `mock` is a toy domain and is not part of the headline numbers.
+- Retail's natural-language assertions are English statements graded by an LLM over the
+  translated conversation. The reference judge is upstream's default,
+  `gpt-4.1-2025-04-14`. How well it agrees with itself across languages (Sanskrit and Odia
+  especially) has not been measured yet.
+- Names of people and places stay in Latin script in the customer briefs (the agent looks
+  them up in an English database). The Indic BFCL release transliterates them instead.
+
