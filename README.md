@@ -1,3 +1,7 @@
+> **Indic tau2-bench.** This is [sierra-research/tau2-bench](https://github.com/sierra-research/tau2-bench) v1.0.1 (commit `2174a60`), set up to score its translations into 14 Indian languages.
+> Data: [ai4bharat/indic-tau2-bench](https://huggingface.co/datasets/ai4bharat/indic-tau2-bench). What changed and how to run a language: [INDIC.md](INDIC.md).
+> The rest of this README is upstream's.
+
 # $\tau$-Bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains
 
 [![python](https://img.shields.io/badge/Python-3.12%2B-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
